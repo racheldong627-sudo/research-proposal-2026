@@ -1,0 +1,1 @@
+# Core dependencies for research proposal tool
