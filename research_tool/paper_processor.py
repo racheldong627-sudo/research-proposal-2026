@@ -70,10 +70,10 @@ class PaperProcessor:
                 break
         
         # Look for year pattern
-        year_pattern = r'\b(19|20)\d{2}\b'
+        year_pattern = r'\b((19|20)\d{2})\b'
         year_matches = re.findall(year_pattern, paper_text[:1000])
         if year_matches:
-            metadata['year'] = year_matches[0]
+            metadata['year'] = year_matches[0][0]  # Get full year from first capturing group
         
         # Look for keywords section
         keywords_pattern = r'(?i)keywords?\s*:?\s*(.+?)(?:\n\n|\n[A-Z]|$)'
